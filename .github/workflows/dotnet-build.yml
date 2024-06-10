@@ -13,12 +13,17 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v2
       with:
         node-version: '14'
 
     - name: Install dependencies
-      run: npm install    
+      run: npm install
+
+    - name: Run custom script
+      run: |
+        echo "Running custom script..."
+        node custom-script.js
